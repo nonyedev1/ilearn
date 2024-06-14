@@ -1,38 +1,280 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+a {
+  cursor: pointer;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: 350px;
+  justify-content: center;
   text-align: center;
+  align-items: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 600px) {
+  .section {
+    width: 100%;
+  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.section p {
+  font-size: 25px;
+  text-transform: capitalize;
+  color: white;
+  position: absolute;
+  font-weight: 800;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+.section img {
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .section img {
+    width: 100%;
+    height: 300px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navbar {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  width: 100%;
+  height: 80px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  background-color: white;
+}
+
+.section1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  margin: 30px auto;
+  padding: 30px 30px;
+  gap: 10px;
+  height: 800px;
+}
+@media (max-width: 600px) {
+  .section1 {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    height: 1500px;
+  }
+}
+.videobackground {
+  width: 100%;
+  height: 600px;
+}
+
+.logo-img {
+  width: 200px;
+  height: 200px;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+}
+ul img {
+  width: 30px;
+  height: 30px;
+}
+li {
+  list-style: none;
+}
+
+.hide {
+  opacity: 0 !important;
+}
+.bluebtn {
+  padding: 10px 15px;
+  background-color: rgb(12, 120, 221) !important;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.bluebtn:hover {
+  background-color: transparent !important;
+  color: rgb(1, 32, 54);
+  transition: 1s ease-in-out;
+  border: 1px solid rgb(1, 32, 54) !important;
+}
+.login-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+  gap: 10px;
+  /* opacity: 0; */
+}
+@media (max-width: 600px) {
+  .login-form {
+    display: none;
+  }
+}
+.login-form input {
+  padding: 8px;
+  border-radius: 7px;
+  background-color: rgb(233, 238, 244);
+  border: none;
+}
+.login a {
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 8px;
+  width: 70px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  gap: 5px;
+}
+.login a:hover {
+  background-color: rgb(28, 111, 220);
+  color: white;
+  transition: 0.8s ease-in-out;
+  border: none !important;
+}
+.login a img {
+  width: 15px;
+  height: 15px;
+}
+.rotate {
+  width: 25px;
+  height: 25px;
+  left: 65%;
+  top: 122%;
+  z-index: 0;
+  border-radius: 50%;
+  background-color: rgb(2, 62, 174);
+  border-bottom: 3px solid rgb(8, 8, 80);
+  position: absolute;
+  animation: rotate 7s linear infinite;
 }
 
-@keyframes App-logo-spin {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+.rotatearound {
+  width: 15px;
+  height: 15px;
+  left: 65%;
+  top: 120%;
+  z-index: 0;
+  border-radius: 50%;
+  background-color: rgb(48, 130, 238);
+  border-bottom: 3px solid rgb(8, 8, 80);
+  position: absolute;
+  animation: rotate 4s linear infinite;
+}
+.rotatearound2 {
+  width: 10px;
+  height: 10px;
+  left: 65%;
+  top: 120%;
+  z-index: 0;
+  border-radius: 50%;
+  background-color: rgb(2, 26, 57);
+  position: absolute;
+  animation: rotate 2s linear infinite;
+}
+
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 500px;
+  z-index: 3;
+  justify-content: center;
+  margin: auto;
+  gap: 12px;
+  border: 1px solid rgb(5, 5, 31);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+@media (max-width: 600px) {
+  .signUpForm {
+    width: 90%;
+  }
+}
+
+.signUpForm input {
+  padding: 10px 5px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-transform: capitalize;
+  z-index: 3;
+  border: none;
+  background-color: rgb(234, 236, 244);
+}
+.signUpForm ul {
+  display: flex;
+  justify-content: center;
+}
+.signUpForm ul a {
+  color: rgb(40, 105, 219);
+}
+.signUpForm ul a:hover {
+  color: rgb(5, 18, 42);
+  transition: 0.5s ease-in-out;
+}
+
+.profile-photo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.profile-photo img {
+  width: 90px;
+  height: 75px;
+  z-index: 3;
+}
+.profile-photo img:hover {
+  opacity: 0.4;
+  transition: 0.6s ease-in-out;
+}
+.profile-photo:hover::after {
+  content: "upload profile photo";
+  position: absolute;
+  font-size: 7px;
+  margin-top: 35px;
+  color: rgb(0, 123, 255);
+  font-weight: 600;
+}
+
+.signUpForm h1 {
+  text-align: center;
+  z-index: 3;
+  color: rgb(2, 5, 73);
+}
+#profilephotoinput {
+  /* opacity: 0; */
+  display: none;
+  font-size: 0;
 }
